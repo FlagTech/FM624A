@@ -94,5 +94,9 @@ while True:
         screen.text(20, 80, "Loading...")
         time.sleep(1)
         reset()
+        # 這裡進入無窮迴圈等待 reset
+        # 否則會在真正 reset 前重新進入上層迴圈
+        # 就可能會在檔案存取時 reset 
+        # 造成控制板內檔案毀損無法正常運作
         while True:
             pass
